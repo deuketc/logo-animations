@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="react_x5F_logo" width="1000" height="1000" x="0" y="0" version="1.1">
+  <g id="Logo">
+    <circle id="circle01" cx="500" cy="500" r="100.183" fill="#087EA4"/>
+    <ellipse id="path03" cx="500" cy="500" fill="none" stroke="#087EA4" stroke-linecap="round" stroke-miterlimit="10" stroke-width="35" rx="481.68" ry="216.755"/>
+    <ellipse id="path02" cx="500.001" cy="500" fill="none" stroke="#087EA4" stroke-linecap="round" stroke-miterlimit="10" stroke-width="35" rx="216.755" ry="481.679" transform="rotate(-30 499.97 500.017)"/>
+    <ellipse id="path01" cx="500.001" cy="500" fill="none" stroke="#087EA4" stroke-linecap="round" stroke-miterlimit="19" stroke-width="35" rx="216.755" ry="481.68" transform="rotate(30 500.017 499.969)"/>
+  </g>
+  <g id="paths" fill="none">
+    <ellipse id="tracepath03" cx="1579.499" cy="-101.001" rx="481.68" ry="216.755"/>
+    <ellipse id="tracepath02" cx="1579.5" cy="-101" rx="216.755" ry="481.679" transform="rotate(-30 1579.48 -100.923)"/>
+    <ellipse id="tracepath01" cx="1579.5" cy="-101" rx="216.755" ry="481.68" transform="rotate(30 1579.471 -101.074)"/>
+  </g>
+  <radialGradient id="gradiant01_1_" cx="1579.5" cy="999.5" r="579.5" gradientUnits="userSpaceOnUse">
+    <stop offset=".449" style="stop-color:#087ea4"/>
+    <stop offset=".55" style="stop-color:#0b7fa5;stop-opacity:.8095"/>
+    <stop offset=".622" style="stop-color:#1484a8;stop-opacity:.6746"/>
+    <stop offset=".685" style="stop-color:#248cae;stop-opacity:.5569"/>
+    <stop offset=".742" style="stop-color:#3a98b6;stop-opacity:.449"/>
+    <stop offset=".796" style="stop-color:#56a7c1;stop-opacity:.3477"/>
+    <stop offset=".848" style="stop-color:#79b9ce;stop-opacity:.2513"/>
+    <stop offset=".897" style="stop-color:#a3cfdd;stop-opacity:.159"/>
+    <stop offset=".943" style="stop-color:#d2e8ee;stop-opacity:.072"/>
+    <stop offset=".982" style="stop-color:#fff;stop-opacity:0"/>
+  </radialGradient>
+  <circle id="gradiant01" cx="1579.5" cy="999.5" r="579.5" fill="url(#gradiant01_1_)"/>
+</svg>

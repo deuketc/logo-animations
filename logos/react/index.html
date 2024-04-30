@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      #whitepath01 { stroke-dasharray: 800, 1473; stroke-linecap: round;  stroke-dashoffset: 120;}
+      #whitepath02 { stroke-dasharray: 800, 1473; stroke-linecap: round;  stroke-dashoffset: 120;}
+      #whitepath03 { stroke-dasharray: 800, 1473; stroke-linecap: round;  stroke-dashoffset: 120;}
+      #logopath01 { stroke-dasharray: 2273, 0; stroke-dashoffset: 120;}
+      #logopath02 { stroke-dasharray: 2273, 0; stroke-dashoffset: 120;}
+      #logopath03 { stroke-dasharray: 2273, 0; stroke-dashoffset: 120;}
+      .hide { display: none; }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <svg id="ani-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="react_x5F_logo" width="1000" height="1000" x="0" y="0" version="1.1" viewBox="0 0 1000 1000">
+
+        <g id="logoWrapper">
+
+          <radialGradient id="gradiantradial" cx="0" cy="0" r="579.5" gradientUnits="userSpaceOnUse">
+            <stop offset=".449" style="stop-color:#087ea4"/>
+            <stop offset=".55" style="stop-color:#0b7fa5;stop-opacity:.8095"/>
+            <stop offset=".622" style="stop-color:#1484a8;stop-opacity:.6746"/>
+            <stop offset=".685" style="stop-color:#248cae;stop-opacity:.5569"/>
+            <stop offset=".742" style="stop-color:#3a98b6;stop-opacity:.449"/>
+            <stop offset=".796" style="stop-color:#56a7c1;stop-opacity:.3477"/>
+            <stop offset=".848" style="stop-color:#79b9ce;stop-opacity:.2514"/>
+            <stop offset=".897" style="stop-color:#a3cfdd;stop-opacity:.159"/>
+            <stop offset=".943" style="stop-color:#d2e8ee;stop-opacity:.072"/>
+            <stop offset=".982" style="stop-color:#fff;stop-opacity:0"/>
+          </radialGradient>
+
+          <g id="gradiant01mask">
+            <g mask="url(#whitepath01mask)">
+              <circle id="gradiant01" cx="0" cy="0" r="579.5" fill="url(#gradiantradial)"/>
+            </g>
+            <g mask="url(#whitepath02mask)">
+              <circle id="gradiant02" cx="0" cy="0" r="579.5" fill="url(#gradiantradial)"/>
+            </g>
+            <g mask="url(#whitepath03mask)">
+              <circle id="gradiant03" cx="0" cy="0" r="579.5" fill="url(#gradiantradial)"/>
+            </g>
+          </g>
+
+          <g id="whitepaths" fill="none" stroke="#FFF" stroke-miterlimit="10" stroke-width="35">
+            <mask id="whitepath01mask">
+              <path id="whitepath01" d="M500 282.745c266.023 0 481.679 97.045 481.679 216.755 0 119.711-215.656 216.755-481.679 216.755-266.023 0-481.679-97.044-481.679-216.755C18.322 379.79 233.977 282.745 500 282.745z"/>
+            </mask>
+            <mask id="whitepath02mask">
+              <path id="whitepath02" d="M687.717 391.123C820.729 621.505 844.51 856.791 740.84 916.646 637.168 976.5 445.296 838.262 312.286 607.878 179.273 377.495 155.488 142.209 259.161 82.354s295.544 78.385 428.556 308.769z"/>
+            </mask>
+            <mask id="whitepath03mask">
+              <path id="whitepath03" stroke-linejoin="round" d="M687.717 607.878C554.705 838.262 362.833 976.5 259.161 916.646c-103.673-59.855-79.888-295.142 53.125-525.523C445.296 160.739 637.168 22.499 740.84 82.354c103.67 59.855 79.889 295.141-53.123 525.524z"/>
+            </mask>
+          </g>
+
+          <g id="clearpaths" fill="none">
+            <path id="clearpath01" d="M499.999 283.245c266.023 0 481.68 97.045 481.68 216.755s-215.656 216.755-481.68 216.755S18.321 619.711 18.321 500s215.655-216.755 481.678-216.755z"/>
+            <path id="clearpath02" d="M687.716 391.624c133.012 230.382 156.793 465.667 53.123 525.523C637.167 977 445.296 838.762 312.284 608.379 179.272 377.996 155.487 142.71 259.159 82.854c103.674-59.855 295.545 78.385 428.557 308.77z"/>
+            <path id="clearpath03" d="M687.716 608.379C554.704 838.762 362.833 977 259.159 917.146c-103.672-59.855-79.887-295.141 53.125-525.523C445.296 161.239 637.167 22.999 740.839 82.854c103.67 59.856 79.889 295.142-53.123 525.525z"/>
+          </g>
+
+          <g id="Logo">
+            <circle id="circle01" cx="500" cy="500" r="100.183" fill="#087EA4"/>
+            <path id="logopath01" fill="none" stroke="#087EA4" stroke-linecap="round" stroke-miterlimit="10" stroke-width="35" d="M500 283.245c266.023 0 481.68 97.045 481.68 216.755 0 119.711-215.656 216.755-481.68 216.755S18.321 619.711 18.321 500c0-119.71 215.656-216.755 481.679-216.755z"/>
+            <path id="logopath02" fill="none" stroke="#087EA4" stroke-linecap="round" stroke-miterlimit="10" stroke-width="35" d="M687.717 391.623C820.728 622.005 844.51 857.291 740.84 917.147c-103.673 59.854-295.544-78.386-428.555-308.77C179.272 377.995 155.488 142.709 259.16 82.854c103.673-59.855 295.544 78.385 428.557 308.769z"/>
+            <path id="logopath03" fill="none" stroke="#087EA4" stroke-linecap="round" stroke-miterlimit="19" stroke-width="35" d="M687.717 608.378C554.704 838.762 362.833 977.001 259.16 917.147c-103.672-59.856-79.888-295.143 53.125-525.524C445.296 161.239 637.167 22.999 740.84 82.854c103.67 59.855 79.888 295.141-53.123 525.524z"/>
+          </g>
+
+          <rect id="circleContainer" x="328" y="329" fill="#FFFFFF" width="342" height="342" style="opacity: 0"/>
+
+        </g>
+
+      </svg>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="../../script/lib/MotionPathPlugin.min.js"></script>
+    <script src="../../script/lib/DrawSVGPlugin.min.js"></script>
+    <script src="./ani-react.js"></script>
+  </body>
+</html>

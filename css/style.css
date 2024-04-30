@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+#ani-svg {
+  cursor: pointer;
+  height: auto;
+}
+
+#ani-svg__max-width-400 {
+  max-width: 400px;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
