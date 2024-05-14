@@ -73,7 +73,7 @@ reacttl
   .to(
     "#logopath03",
     pathAnimationDuration / 2,
-    { strokeDasharray: "0, 2273", ease: "none" },
+    { strokeDasharray: "0, 1877", ease: "none" },
     "start"
   )
   .add("path02")
@@ -87,7 +87,7 @@ reacttl
   .to(
     "#whitepath03",
     pathAnimationDuration,
-    { strokeDashoffset: "2273px", ease: "none", repeat: "-1" },
+    { strokeDashoffset: "1877", ease: "none", repeat: "-1" },
     "<"
   )
   .to("#gradiant03", { scale: 1 }, "<")
@@ -95,7 +95,7 @@ reacttl
   .to(
     "#logopath02",
     pathAnimationDuration / 2,
-    { strokeDasharray: "0, 2273", ease: "none" },
+    { strokeDasharray: "0, 1877", ease: "none" },
     `path02`
   )
   .add("path03")
@@ -109,7 +109,7 @@ reacttl
   .to(
     "#whitepath02",
     pathAnimationDuration,
-    { strokeDashoffset: "2273px", ease: "none", repeat: "-1" },
+    { strokeDashoffset: "1877", ease: "none", repeat: "-1" },
     "<"
   )
   .to("#gradiant02", { scale: 1 }, "<")
@@ -117,7 +117,7 @@ reacttl
   .to(
     "#logopath01",
     pathAnimationDuration / 2,
-    { strokeDasharray: "0, 2273", ease: "none" },
+    { strokeDasharray: "0, 1877", ease: "none" },
     `path03`
   )
   .set("#logopath01", { opacity: "0" })
@@ -130,7 +130,7 @@ reacttl
   .to(
     "#whitepath01",
     pathAnimationDuration,
-    { strokeDashoffset: "2273px", ease: "none", repeat: "-1" },
+    { strokeDashoffset: "1877", ease: "none", repeat: "-1" },
     "<"
   )
   .to("#gradiant01", { scale: 1 }, "<");
