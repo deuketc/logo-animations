@@ -55,9 +55,10 @@ just HTML, CSS and a little JavaScript, hosted on GitHub Pages.
 
 ## Running it locally
 
-Opening the SVG pages directly in a browser works. **Rive pages need a local
-web server**, because browsers won't load `.riv` files from a page opened
-straight from disk. From the repo folder, run:
+Use a local web server rather than opening the files directly. Rive pages
+won't load their `.riv` files from disk. Also, the landing page links to
+folders (`logos/js/`), and only a server opens a folder's `index.html`
+automatically. From the repo folder, run:
 
 ```sh
 npx serve
@@ -93,7 +94,7 @@ Then open the address it prints (usually http://localhost:3000).
 
    ```html
    <li>
-     <a class="card" href="logos/my-button/index.html">
+     <a class="card" href="logos/my-button/">
        <img src="logos/my-button/thumb.png" alt="my-button" loading="lazy" />
        <span class="caption">my-button</span>
      </a>

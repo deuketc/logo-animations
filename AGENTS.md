@@ -16,9 +16,11 @@ buttons. It's a static site on GitHub Pages:
 - **No frameworks, bundlers or build step.** Plain HTML, CSS and JS only. Load
   libraries from a CDN, or vendor them into `script/lib/`. Don't add
   `package.json` dependencies for the site itself.
-- **Use relative links between pages** (`logos/js/index.html`, `../../css/style.css`)
-  so the site works locally and under the `/logo-animations/` path on Pages.
-  The only absolute URLs are in the social share tags (see below).
+- **Use relative links between pages** (`logos/js/`, `../../css/style.css`)
+  so the site works under the `/logo-animations/` path on Pages. Link to
+  animation **folders** (`logos/js/`), not `logos/js/index.html`; the server
+  serves `index.html` automatically. The only absolute URLs are in the social
+  share tags (see below).
 - **Don't put page-specific styles in `css/style.css`.** Every animation page
   shares it. Put page-specific CSS in that page's `<style>` block. Landing page
   styles go in `css/home.css`.
@@ -108,7 +110,7 @@ likely causes, in order:
    items have been added near the top or the end.
    ```html
    <li>
-     <a class="card" href="logos/<name>/index.html">
+     <a class="card" href="logos/<name>/">
        <img src="logos/<name>/thumb.png" alt="<name>" loading="lazy" />
        <span class="caption"><name></span>
      </a>
