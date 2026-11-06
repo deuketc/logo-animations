@@ -9,7 +9,7 @@ overview, see [README.md](README.md).
 buttons. It's a static site on GitHub Pages:
 
 - Live: https://deuketc.github.io/logo-animations/
-- CodePen (the code is shared there too): https://codepen.io/charlesduquette
+- CodePen (the code is shared there too): https://codepen.io/charlesdeukett
 
 ## Hard rules
 
@@ -77,7 +77,7 @@ tools/capture.js        Generates thumb.png / social.png from a page
   or `tools/capture.js`, which runs its own server.
 - **Rive watermark:** the current exports play a Rive "R" watermark intro (the
   extra "Watermark" / "NuRive…" artboards). Any screenshot taken too early shows
-  a black square with the Rive logo. Wait several seconds of *real* time.
+  a black square with the Rive logo. Wait several seconds of _real_ time.
 - Template to copy: `logos/beaker/`.
 
 #### Debugging a Rive file that "doesn't work"
@@ -125,16 +125,31 @@ from an existing page and change the name, description and folder:
 
 ```html
 <title>Beaker | Micro Animations</title>
-<meta name="description" content="An interactive animated beaker, built in Rive." />
-<link rel="canonical" href="https://deuketc.github.io/logo-animations/logos/beaker/" />
+<meta
+  name="description"
+  content="An interactive animated beaker, built in Rive."
+/>
+<link
+  rel="canonical"
+  href="https://deuketc.github.io/logo-animations/logos/beaker/"
+/>
 
 <!-- Open Graph (Facebook, LinkedIn and most other sites) -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Micro Animations" />
 <meta property="og:title" content="Beaker | Micro Animations" />
-<meta property="og:description" content="An interactive animated beaker, built in Rive." />
-<meta property="og:url" content="https://deuketc.github.io/logo-animations/logos/beaker/" />
-<meta property="og:image" content="https://deuketc.github.io/logo-animations/logos/beaker/social.png" />
+<meta
+  property="og:description"
+  content="An interactive animated beaker, built in Rive."
+/>
+<meta
+  property="og:url"
+  content="https://deuketc.github.io/logo-animations/logos/beaker/"
+/>
+<meta
+  property="og:image"
+  content="https://deuketc.github.io/logo-animations/logos/beaker/social.png"
+/>
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -143,8 +158,14 @@ from an existing page and change the name, description and folder:
 <!-- X / Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Beaker | Micro Animations" />
-<meta name="twitter:description" content="An interactive animated beaker, built in Rive." />
-<meta name="twitter:image" content="https://deuketc.github.io/logo-animations/logos/beaker/social.png" />
+<meta
+  name="twitter:description"
+  content="An interactive animated beaker, built in Rive."
+/>
+<meta
+  name="twitter:image"
+  content="https://deuketc.github.io/logo-animations/logos/beaker/social.png"
+/>
 <meta name="twitter:image:alt" content="Beaker animation preview" />
 ```
 

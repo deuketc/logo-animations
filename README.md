@@ -3,7 +3,7 @@
 A collection of small animated logos, icons and buttons, made in my spare time.
 
 **Live site:** https://deuketc.github.io/logo-animations/
-**Code on CodePen:** https://codepen.io/charlesduquette
+**Code on CodePen:** https://codepen.io/charlesdeukett
 
 Each animation lives on its own page, and the landing page shows them all as a
 grid of thumbnails. It's a plain static site: no frameworks and no build step,
@@ -11,14 +11,14 @@ just HTML, CSS and a little JavaScript, hosted on GitHub Pages.
 
 ## The animations
 
-| Animation     | Built with  | Interaction                        |
-| ------------- | ----------- | ---------------------------------- |
-| Submit button | Rive        | Hover and click                    |
-| Beaker        | Rive        | Interactive (Rive state machine)   |
-| IAG           | SVG + GSAP  | Plays on load, replays on hover    |
-| JavaScript    | SVG + GSAP  | Hover                              |
-| React         | SVG + GSAP  | Follows the mouse                  |
-| Redux         | SVG + GSAP  | Hover                              |
+| Animation     | Built with | Interaction                      |
+| ------------- | ---------- | -------------------------------- |
+| Submit button | Rive       | Hover and click                  |
+| Beaker        | Rive       | Interactive (Rive state machine) |
+| IAG           | SVG + GSAP | Plays on load, replays on hover  |
+| JavaScript    | SVG + GSAP | Hover                            |
+| React         | SVG + GSAP | Follows the mouse                |
+| Redux         | SVG + GSAP | Hover                            |
 
 ## How it's built
 
@@ -87,6 +87,7 @@ Then open the address it prints (usually http://localhost:3000).
    Check the images afterwards. If an animation plays an intro on load, jump to
    its last frame with `--eval`, e.g.
    `node tools/capture.js iag --eval "iagtl.progress(1).pause()"`.
+
 4. **Update the share tags** in the page's `<head>`: the title, description,
    page URL and image URL. These must be full addresses starting with
    `https://deuketc.github.io/logo-animations/`.
