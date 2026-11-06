@@ -56,9 +56,11 @@ tools/capture.js        Generates thumb.png / social.png from a page
 
 ### Rive (submit-button, beaker)
 
-- `<canvas id="rive-canvas">`, plus a `.placeholder` element that shows until
-  the `.riv` loads, or if it fails to load. The canvas gets the `is-loaded`
-  class in `onLoad`, and CSS then hides the placeholder.
+- Just a `<canvas id="rive-canvas">` inside `.wrapper`. **No placeholder or
+  loading state.** The owner prefers an empty background until Rive draws, so
+  don't add fallback buttons, images or spinners. `onLoad` adds the
+  `is-loaded` class to the canvas; nothing styles it, but `tools/capture.js`
+  uses it to check that the file loaded.
 - The runtime is `@rive-app/canvas`, pinned to a version on unpkg. All setup
   code is **inline in `index.html`**, not in a separate JS file. Set
   `RIVE_FILE` and `STATE_MACHINE` at the top of the script.
@@ -95,13 +97,13 @@ likely causes, in order:
    the caption and alt text.
 2. Copy the matching template's `index.html` (`logos/beaker/` for Rive,
    `logos/js/` for GSAP) and change the `<title>`, the content and the script.
-   - Rive: set `RIVE_FILE` and `STATE_MACHINE`, and update the placeholder.
+   - Rive: set `RIVE_FILE` and `STATE_MACHINE`.
    - GSAP: add `ani-<name>.js` and include only the plugins you use.
 3. Update the **share tags** in `<head>` (see below).
 4. Generate the images:
    `node tools/capture.js <name>` writes `thumb.png` and `social.png`. **Open
    the images and check them**: they should show the finished logo, not a blank
-   intro frame, a Rive watermark or the placeholder.
+   intro frame, a Rive watermark or an empty canvas.
 5. Add a grid item to the root `index.html`. Order is the owner's choice; new
    items have been added near the top or the end.
    ```html
@@ -174,8 +176,8 @@ node tools/capture.js <folder> [thumb|social|both] [--wait ms] [--eval js] [--ou
   - `node tools/capture.js beaker` and `node tools/capture.js submit-button`
     (keep the default wait, for the Rive watermark)
   - `js`, `react`, `redux`: the defaults work. Their resting state is the full logo.
-- The output line says `RIVE NOT LOADED (placeholder shown)` if the `.riv`
-  failed to load. Don't use that image.
+- The output line says `RIVE NOT LOADED` if the `.riv` failed to load. Don't
+  use that image (it will be an empty background).
 - Don't use `chrome --screenshot` with `--virtual-time-budget` for these
   pages. Virtual time doesn't advance the animations, so you get the first
   frame: blank for IAG, the watermark for Rive.

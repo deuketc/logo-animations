@@ -209,7 +209,7 @@ async function capture(server, size, outFile) {
     }
 
     const state = await send("Runtime.evaluate", {
-      expression: "(() => { const c = document.getElementById('rive-canvas'); return c ? (c.classList.contains('is-loaded') ? 'rive loaded' : 'RIVE NOT LOADED (placeholder shown)') : 'svg page'; })()",
+      expression: "(() => { const c = document.getElementById('rive-canvas'); return c ? (c.classList.contains('is-loaded') ? 'rive loaded' : 'RIVE NOT LOADED') : 'svg page'; })()",
       returnByValue: true,
     });
 

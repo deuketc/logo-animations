@@ -33,62 +33,16 @@
       }
 
       #rive-canvas {
-        display: none;
+        display: block;
         width: min(90vw, 500px);
         aspect-ratio: 1 / 1;
         cursor: pointer;
-      }
-
-      #rive-canvas.is-loaded {
-        display: block;
-      }
-
-      #rive-canvas.is-loaded + .placeholder {
-        display: none;
-      }
-
-      /* Shown until the .riv file loads (or if it is missing) */
-      .placeholder {
-        width: min(50vw, 220px);
-        height: auto;
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
       <canvas id="rive-canvas" width="500" height="500"></canvas>
-      <svg
-        class="placeholder"
-        viewBox="0 0 200 240"
-        role="img"
-        aria-label="Beaker"
-      >
-        <!-- Liquid -->
-        <path
-          d="M52 150 L148 150 L168 210 Q170 220 160 220 L40 220 Q30 220 32 210 Z"
-          fill="#4ade80"
-        />
-        <!-- Bubbles -->
-        <circle cx="85" cy="185" r="7" fill="#282828" opacity="0.35" />
-        <circle cx="115" cy="170" r="5" fill="#282828" opacity="0.35" />
-        <circle cx="105" cy="200" r="4" fill="#282828" opacity="0.35" />
-        <!-- Glass -->
-        <path
-          d="M70 20 L70 95 L32 210 Q28 222 42 222 L158 222 Q172 222 168 210 L130 95 L130 20"
-          fill="none"
-          stroke="#f5f5f5"
-          stroke-width="8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <!-- Rim -->
-        <path
-          d="M58 20 L142 20"
-          stroke="#f5f5f5"
-          stroke-width="8"
-          stroke-linecap="round"
-        />
-      </svg>
     </div>
 
     <script src="https://unpkg.com/@rive-app/canvas@2.49.4"></script>
@@ -113,13 +67,12 @@
           alignment: rive.Alignment.Center,
         }),
         onLoad: () => {
+          // Marks the canvas as loaded (tools/capture.js checks for this)
           canvas.classList.add("is-loaded");
           riveBeaker.resizeDrawingSurfaceToCanvas();
         },
         onLoadError: () => {
-          console.warn(
-            `Couldn't load ${RIVE_FILE} - showing the placeholder beaker.`
-          );
+          console.warn(`Couldn't load ${RIVE_FILE}.`);
         },
       });
 

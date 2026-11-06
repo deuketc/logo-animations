@@ -33,29 +33,9 @@
       }
 
       #rive-canvas {
-        display: none;
+        display: block;
         width: min(90vw, 500px);
         aspect-ratio: 1 / 1;
-        cursor: pointer;
-      }
-
-      #rive-canvas.is-loaded {
-        display: block;
-      }
-
-      #rive-canvas.is-loaded + .placeholder {
-        display: none;
-      }
-
-      /* Shown until the .riv file loads (or if it is missing) */
-      .placeholder {
-        padding: 1rem 2.75rem;
-        font: 600 1.25rem/1 system-ui, -apple-system, "Segoe UI", Roboto,
-          sans-serif;
-        color: #fff;
-        background: #4f46e5;
-        border: 0;
-        border-radius: 999px;
         cursor: pointer;
       }
     </style>
@@ -63,7 +43,6 @@
   <body>
     <div class="wrapper">
       <canvas id="rive-canvas" width="500" height="500"></canvas>
-      <button class="placeholder" type="button">Submit</button>
     </div>
 
     <script src="https://unpkg.com/@rive-app/canvas@2.49.4"></script>
@@ -89,13 +68,12 @@
           alignment: rive.Alignment.Center,
         }),
         onLoad: () => {
+          // Marks the canvas as loaded (tools/capture.js checks for this)
           canvas.classList.add("is-loaded");
           riveButton.resizeDrawingSurfaceToCanvas();
         },
         onLoadError: () => {
-          console.warn(
-            `Couldn't load ${RIVE_FILE} - showing the placeholder button.`
-          );
+          console.warn(`Couldn't load ${RIVE_FILE}.`);
         },
       });
 
