@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beaker | Micro Animations</title>
+    <meta name="description" content="An interactive animated beaker, built in Rive." />
+    <link rel="canonical" href="https://deuketc.github.io/logo-animations/logos/beaker/" />
+
+    <!-- Open Graph (Facebook, LinkedIn and most other sites) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Micro Animations" />
+    <meta property="og:title" content="Beaker | Micro Animations" />
+    <meta property="og:description" content="An interactive animated beaker, built in Rive." />
+    <meta property="og:url" content="https://deuketc.github.io/logo-animations/logos/beaker/" />
+    <meta property="og:image" content="https://deuketc.github.io/logo-animations/logos/beaker/social.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Beaker animation preview" />
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Beaker | Micro Animations" />
+    <meta name="twitter:description" content="An interactive animated beaker, built in Rive." />
+    <meta name="twitter:image" content="https://deuketc.github.io/logo-animations/logos/beaker/social.png" />
+    <meta name="twitter:image:alt" content="Beaker animation preview" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      body {
+        background: #313131;
+      }
+
+      #rive-canvas {
+        display: none;
+        width: min(90vw, 500px);
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+      }
+
+      #rive-canvas.is-loaded {
+        display: block;
+      }
+
+      #rive-canvas.is-loaded + .placeholder {
+        display: none;
+      }
+
+      /* Shown until the .riv file loads (or if it is missing) */
+      .placeholder {
+        width: min(50vw, 220px);
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <canvas id="rive-canvas" width="500" height="500"></canvas>
+      <svg
+        class="placeholder"
+        viewBox="0 0 200 240"
+        role="img"
+        aria-label="Beaker"
+      >
+        <!-- Liquid -->
+        <path
+          d="M52 150 L148 150 L168 210 Q170 220 160 220 L40 220 Q30 220 32 210 Z"
+          fill="#4ade80"
+        />
+        <!-- Bubbles -->
+        <circle cx="85" cy="185" r="7" fill="#282828" opacity="0.35" />
+        <circle cx="115" cy="170" r="5" fill="#282828" opacity="0.35" />
+        <circle cx="105" cy="200" r="4" fill="#282828" opacity="0.35" />
+        <!-- Glass -->
+        <path
+          d="M70 20 L70 95 L32 210 Q28 222 42 222 L158 222 Q172 222 168 210 L130 95 L130 20"
+          fill="none"
+          stroke="#f5f5f5"
+          stroke-width="8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <!-- Rim -->
+        <path
+          d="M58 20 L142 20"
+          stroke="#f5f5f5"
+          stroke-width="8"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+
+    <script src="https://unpkg.com/@rive-app/canvas@2.49.4"></script>
+    <script>
+      // Export your animation from Rive into this folder with this name,
+      // and set the state machine name to match the one in your Rive file.
+      const RIVE_FILE = "beaker.riv";
+      const STATE_MACHINE = "State Machine 1";
+
+      const canvas = document.getElementById("rive-canvas");
+
+      const riveBeaker = new rive.Rive({
+        src: RIVE_FILE,
+        canvas: canvas,
+        autoplay: true,
+        stateMachines: STATE_MACHINE,
+        // Binds the file's default view model instance so interactions
+        // driven by data binding work. Harmless if the file has none.
+        autoBind: true,
+        layout: new rive.Layout({
+          fit: rive.Fit.Contain,
+          alignment: rive.Alignment.Center,
+        }),
+        onLoad: () => {
+          canvas.classList.add("is-loaded");
+          riveBeaker.resizeDrawingSurfaceToCanvas();
+        },
+        onLoadError: () => {
+          console.warn(
+            `Couldn't load ${RIVE_FILE} - showing the placeholder beaker.`
+          );
+        },
+      });
+
+      // Keep the drawing sharp when the window is resized
+      window.addEventListener("resize", () => {
+        riveBeaker.resizeDrawingSurfaceToCanvas();
+      });
+    </script>
+  </body>
+</html>

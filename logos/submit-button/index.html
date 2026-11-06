@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Button | Micro Animations</title>
+    <meta name="description" content="An interactive animated submit button, built in Rive." />
+    <link rel="canonical" href="https://deuketc.github.io/logo-animations/logos/submit-button/" />
+
+    <!-- Open Graph (Facebook, LinkedIn and most other sites) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Micro Animations" />
+    <meta property="og:title" content="Submit Button | Micro Animations" />
+    <meta property="og:description" content="An interactive animated submit button, built in Rive." />
+    <meta property="og:url" content="https://deuketc.github.io/logo-animations/logos/submit-button/" />
+    <meta property="og:image" content="https://deuketc.github.io/logo-animations/logos/submit-button/social.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Submit Button animation preview" />
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Submit Button | Micro Animations" />
+    <meta name="twitter:description" content="An interactive animated submit button, built in Rive." />
+    <meta name="twitter:image" content="https://deuketc.github.io/logo-animations/logos/submit-button/social.png" />
+    <meta name="twitter:image:alt" content="Submit Button animation preview" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      body {
+        background: #282828;
+      }
+
+      #rive-canvas {
+        display: none;
+        width: min(90vw, 500px);
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+      }
+
+      #rive-canvas.is-loaded {
+        display: block;
+      }
+
+      #rive-canvas.is-loaded + .placeholder {
+        display: none;
+      }
+
+      /* Shown until the .riv file loads (or if it is missing) */
+      .placeholder {
+        padding: 1rem 2.75rem;
+        font: 600 1.25rem/1 system-ui, -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        color: #fff;
+        background: #4f46e5;
+        border: 0;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <canvas id="rive-canvas" width="500" height="500"></canvas>
+      <button class="placeholder" type="button">Submit</button>
+    </div>
+
+    <script src="https://unpkg.com/@rive-app/canvas@2.49.4"></script>
+    <script>
+      // Export your animation from Rive into this folder with this name,
+      // and set the state machine name to match the one in your Rive file.
+      const RIVE_FILE = "button_submit.riv";
+      const STATE_MACHINE = "State Machine 1";
+
+      const canvas = document.getElementById("rive-canvas");
+
+      const riveButton = new rive.Rive({
+        src: RIVE_FILE,
+        canvas: canvas,
+        autoplay: true,
+        stateMachines: STATE_MACHINE,
+        // The button's hover/click states are driven by data binding
+        // (view model properties isHovered / isClicked), so bind the
+        // default view model instance or the interactions won't fire.
+        autoBind: true,
+        layout: new rive.Layout({
+          fit: rive.Fit.Contain,
+          alignment: rive.Alignment.Center,
+        }),
+        onLoad: () => {
+          canvas.classList.add("is-loaded");
+          riveButton.resizeDrawingSurfaceToCanvas();
+        },
+        onLoadError: () => {
+          console.warn(
+            `Couldn't load ${RIVE_FILE} - showing the placeholder button.`
+          );
+        },
+      });
+
+      // Keep the drawing sharp when the window is resized
+      window.addEventListener("resize", () => {
+        riveButton.resizeDrawingSurfaceToCanvas();
+      });
+    </script>
+  </body>
+</html>
